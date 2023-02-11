@@ -1,0 +1,183 @@
+html {
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+    font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+    max-width: 120rem;
+    height: 100vh;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba(216, 38, 240, 0.8),
+            rgb(5, 189, 149, 0.8)
+        ),
+        url("./img/university.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    transition: 1s;
+}
+
+form label {
+    font-size: 2rem;
+    display: block;
+}
+
+.form__notas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    max-width: 100rem;
+    background-color: #fffbfb;
+    padding: 1rem;
+    gap: 5rem;
+    border-radius: 2.5rem;
+}
+
+.form__notas--clicked {
+    border: 1px rgb(255, 168, 7) solid;
+}
+
+.form__notas--container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#nombre,
+#apellido,
+#matricula,
+#curso,
+#nota {
+    width: 100%;
+    align-self: center;
+    border: 1px rgb(161, 161, 161) solid;
+    border-radius: 0.6rem;
+    padding: 0.6rem;
+    transition: all 1s;
+}
+
+::placeholder {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #88848480;
+}
+.btn--default {
+    width: 100%;
+    padding: 0.5rem;
+    text-transform: uppercase;
+    color: #fffbfb;
+    background: linear-gradient(
+        to right,
+        rgba(181, 150, 209, 0.8),
+        rgb(5, 189, 149, 0.8)
+    );
+    font-size: 2rem;
+    border: 1px transparent;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.form__notas--container.form__notas--course {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.form__notas--course--scores,
+.form__notas--course--course {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__notas--container.form__notas--course label {
+    font-size: 1.5rem;
+}
+
+.title--animated {
+    background: -webkit-linear-gradient(
+        rgba(181, 150, 209, 0.8),
+        rgb(5, 189, 149, 0.8)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 3s ease-in;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+
+@keyframes move {
+    0% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.btn--default:hover {
+    font-size: 2.1rem;
+    transform: scaleX(0.95);
+    transform: scaleY(1);
+    padding: 0.7rem;
+    background: linear-gradient(
+        to left,
+        rgba(181, 150, 209, 0.8),
+        rgb(5, 189, 149, 0.8)
+    );
+}
+
+.btn--clicked {
+    background-color: #fffbfb;
+    font-size: 2.1rem;
+    transform: scaleX(0.95);
+    transform: scaleY(1);
+    padding: 0.7rem;
+    border: 1px transparent;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0rem 0rem 0.1rem inset;
+    text-transform: uppercase;
+}
+
+.show-click {
+    background: -webkit-linear-gradient(rgb(235, 231, 16), rgb(255, 168, 7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 3s ease-in;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+
+.score--published {
+    background: -webkit-linear-gradient(rgb(235, 231, 16), rgb(255, 168, 7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: move 3s ease-in;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+
+.show-click--inputs {
+    background: -webkit-linear-gradient(rgb(235, 231, 16), rgb(255, 168, 7));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
+}

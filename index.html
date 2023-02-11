@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <title>Consultar notas</title>
+    </head>
+    <body>
+        <form action="" class="form__notas">
+            <h1 class="main__title">Publicar notas</h1>
+            <div class="form__notas--container form__notas--name">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Nombre" />
+            </div>
+            <div class="form__notas--container form__notas--last-name">
+                <label for="apellido">Apellido:</label>
+                <input type="text" id="apellido" placeholder="Apellido" />
+            </div>
+            <!--<div class="form__notas--container form__notas--id">
+                <label for="matricula">Matrícula:</label>
+                <input type="number" id="matricula" placeholder="Matrícula" />
+            </div>-->
+            <div class="form__notas--container form__notas--course">
+                <div class="form__notas--course--id">
+                    <label for="matricula">Matrícula:</label>
+                    <input
+                        type="number"
+                        id="matricula"
+                        placeholder="Matrícula"
+                    />
+                </div>
+                <div class="form__notas--course--course">
+                    <label for="curso">Curso:</label>
+                    <input type="text" id="curso" placeholder="Curso" />
+                </div>
+                <div class="form__notas--course--scores">
+                    <label for="nota">Nota:</label>
+                    <input type="number" id="nota" placeholder="Nota" />
+                </div>
+            </div>
+
+            <div class="form__notas--container form__notas--button">
+                <button
+                    class="btn btn--main btn--default"
+                    id="button-clicked"
+                    type="submit"
+                >
+                    <p class="btn--main__p">Publicar</p>
+                </button>
+            </div>
+        </form>
+        <script src="scripting/animacion.js" type="module"></script>
+        <script src="scripting/crearEstudiante.js" type="module"></script>
+    </body>
+</html>
