@@ -9,22 +9,61 @@ import {
 } from "./animacion.js";
 import { Estudiante } from "./clase.js";
 
-const valorApellido = apellido.value;
-const valorMatricula = matricula.value;
-const valorCurso = curso.value;
-const valorNota = nota.value;
+export let objEstudiante = {
+    nombre: "",
+    apellido: "",
+    matricula: "",
+    curso: "",
+    nota: "",
+};
+export let arrayEstudiantes = [];
 
-nombre.addEventListener("blur", crearEstudiante);
+export function registrarEstudiantes() {
+    nombre.addEventListener("blur", llenarValores);
+    apellido.addEventListener("blur", llenarValores);
+    matricula.addEventListener("blur", llenarValores);
+    curso.addEventListener("blur", llenarValores);
+    nota.addEventListener("blur", llenarValores);
+    mainButton.addEventListener("click", crearEstudiante);
+}
 
-function crearEstudiante(e) {
-    /*e.preventDefault();
-    const nuevoEstudiante = new Estudiante(
-        valorNombre,
-        valorApellido,
-        valorMatricula,
-        valorCurso,
-        valorNota
-    );*/
-    const valorNombre = nombre.value;
-    console.log(valorNombre);
+registrarEstudiantes();
+
+export function llenarValores(e) {
+    const filtrarValor = Object.keys(objEstudiante).filter(
+        (llave) => llave === e.target.id
+    );
+    objEstudiante[filtrarValor[0]] = e.target.value; /*objEstudiante[nombre]*/
+
+    if (filtrarValor[0] === "nota") {
+        objEstudiante[filtrarValor[0]] = Number(e.target.value);
+    }
+}
+
+export function crearEstudiante() {
+    if (
+        objEstudiante.nombre !== "" &&
+        objEstudiante.apellido !== "" &&
+        objEstudiante.matricula !== "" &&
+        objEstudiante.curso !== "" &&
+        objEstudiante.nota !== ""
+    ) {
+        const estudianteNombre = objEstudiante.nombre;
+        const estudianteApellido = objEstudiante.apellido;
+        const estudianteMatricula = objEstudiante.matricula;
+        const estudianteCurso = objEstudiante.curso;
+        const estudianteNota = objEstudiante.nota;
+        const nuevoEstudiante = new Estudiante(
+            estudianteNombre,
+            estudianteApellido,
+            estudianteMatricula,
+            estudianteCurso,
+            estudianteNota
+        );
+
+        arrayEstudiantes.push(nuevoEstudiante);
+        form.reset();
+
+        console.log(arrayEstudiantes);
+    }
 }
