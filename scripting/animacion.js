@@ -27,7 +27,7 @@ let arrayLabels = [
     notaLabel,
 ];
 
-export function animar() {
+function animar() {
     mainButton.addEventListener("mouseover", animateTitle);
     mainButton.addEventListener("mouseout", animateTitleOff);
     mainButton.addEventListener("click", showClick);
@@ -48,6 +48,7 @@ export function animar() {
             p.classList.toggle("show-click");
             mainButton.classList.toggle("btn--default");
             mainButton.classList.toggle("btn--clicked");
+            
             title.classList.remove("score--published");
             form.classList.remove("form__notas--clicked");
             arrayInputs.forEach(

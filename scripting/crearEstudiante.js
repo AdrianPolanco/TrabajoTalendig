@@ -18,7 +18,7 @@ export let objEstudiante = {
 };
 export let arrayEstudiantes = [];
 
-export function registrarEstudiantes() {
+function registrarEstudiantes() {
     nombre.addEventListener("blur", llenarValores);
     apellido.addEventListener("blur", llenarValores);
     matricula.addEventListener("blur", llenarValores);
@@ -33,14 +33,23 @@ export function llenarValores(e) {
     const filtrarValor = Object.keys(objEstudiante).filter(
         (llave) => llave === e.target.id
     );
+
     objEstudiante[filtrarValor[0]] = e.target.value; /*objEstudiante[nombre]*/
 
-    if (filtrarValor[0] === "nota") {
+    if (filtrarValor[0] === "nota" || filtrarValor[0] === "matricula") {
         objEstudiante[filtrarValor[0]] = Number(e.target.value);
+        if (
+            (filtrarValor[0] === "nota" && Number(e.target.value) < 0) ||
+            (filtrarValor[0] === "matricula" && Number(e.target.value) < 0)
+        ) {
+            objEstudiante[filtrarValor[0]] = "";
+        }
     }
+
+    console.log(objEstudiante);
 }
 
-export function crearEstudiante() {
+function crearEstudiante() {
     if (
         objEstudiante.nombre !== "" &&
         objEstudiante.apellido !== "" &&

@@ -10,6 +10,7 @@
             href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap"
             rel="stylesheet"
         />
+        <link rel="stylesheet" href="bootstrap.css" />
         <link rel="stylesheet" href="styles.css" />
         <title>Consultar notas</title>
     </head>
@@ -25,6 +26,7 @@
                     data-value="valorNombre"
                 />
             </div>
+            <div class="alert-container__start"></div>
             <div class="form__notas--container form__notas--last-name">
                 <label for="apellido">Apellido:</label>
                 <input
@@ -34,6 +36,7 @@
                     data-value="valorApellido"
                 />
             </div>
+            <div class="alert-container__mid"></div>
             <!--<div class="form__notas--container form__notas--id">
                 <label for="matricula">Matrícula:</label>
                 <input type="number" id="matricula" placeholder="Matrícula" />
@@ -67,7 +70,7 @@
                     />
                 </div>
             </div>
-
+            <div class="alert-container__final"></div>
             <div class="form__notas--container form__notas--button">
                 <button
                     class="btn btn--main btn--default"
@@ -78,7 +81,37 @@
                 </button>
             </div>
         </form>
-        <script src="scripting/animacion.js" type="module"></script>
+        <div class="tabla__container">
+            <table>
+                <thead>
+                    <tr class="head__row">
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Matricula</th>
+                        <th>Curso</th>
+                        <th>Nota</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--<tr class="body__row"></tr>-->
+                    <!-- <td>Adrian</td>
+                        <td>Polanco</td>
+                        <td>2023-0222</td>
+                        <td>Web Development</td>
+                        <td>80</td>
+                    </tr>
+                    <tr class="body__row--score">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td>Promedio</td>
+                        <td>90</td>
+                    </tr>-->
+                </tbody>
+            </table>
+        </div>
         <script src="scripting/crearEstudiante.js" type="module"></script>
+        <script src="scripting/animacion.js" type="module"></script>
+        <script src="scripting/tabla.js" type="module"></script>
     </body>
 </html>

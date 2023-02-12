@@ -7,7 +7,7 @@ html {
 
 body {
     max-width: 120rem;
-    height: 100vh;
+
     background-image: linear-gradient(
             to right bottom,
             rgba(216, 38, 240, 0.8),
@@ -17,6 +17,8 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
+
+    gap: 5rem;
     justify-content: center;
     letter-spacing: 0.2rem;
 }
@@ -67,6 +69,7 @@ form label {
     border-radius: 0.6rem;
     padding: 0.6rem;
     transition: all 1s;
+    font-size: 1.5rem;
 }
 
 ::placeholder {
@@ -133,6 +136,7 @@ form label {
 
 .btn--default:hover {
     font-size: 2.1rem;
+    color: #fffbfb;
     transform: scaleX(0.95);
     transform: scaleY(1);
     padding: 0.7rem;
@@ -180,4 +184,25 @@ form label {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.5rem;
+}
+
+table,
+th,
+td {
+    border: 1px black solid;
+}
+
+.head__row {
+    font-size: 1.5rem;
+    color: #fffbfb;
+    padding: 2rem;
+    background-color: rgb(182, 150, 209);
+}
+
+.body__row,
+.body__row--score {
+    font-size: 1.5rem;
+    color: #000;
+    padding: 2rem;
+    background-color: #fffbfb;
 }
